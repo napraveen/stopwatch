@@ -3,7 +3,8 @@ var sec =00;
 var appendtens = document.getElementById("tens");
 var appendsec = document.getElementById("sec");
 var started = document.getElementById("start");
-var stoped = document.getElementById("stop");
+var stopped = document.getElementById("stop");
+var reseted = document.getElementById("reset");
 var interval;
 function startTimer(){
     tens++;
@@ -30,7 +31,14 @@ function startTimer(){
 started.onclick = function(){
     interval = setInterval(startTimer);
 };
-stoped.onclick = function(){
+stopped.onclick = function(){
     
     interval = clearInterval(interval);
+};
+reseted.onclick = function(){
+    clearInterval(interval);
+    tens="00";
+    sec="00";
+    appendsec.innerHTML=sec;
+    appendtens.innerHTML=tens;
 };
